@@ -7,8 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'material-demo';
+  color = 2;
+  
+  colors = [
+    {id:1, name: 'Green'},
+    {id:2, name: 'White'},
+    {id:3, name: 'Indigo'}
+  ];
 
   onChange($event){
-    
+    console.log($event);
   }
 }

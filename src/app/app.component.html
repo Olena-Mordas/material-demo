@@ -1,4 +1,4 @@
-<mat-checkbox 
+<!-- <mat-checkbox 
 #showDetails
 [value]='t'
 [checked]= 'true'
@@ -6,4 +6,20 @@
 class="example-margin">
   Show details
 </mat-checkbox>
-<div *ngIf='showDetails.checked'>Some details..</div>
+<div *ngIf='showDetails.checked'>Some details..</div> -->
+
+<!-- <mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="1">Option 1</mat-radio-button>
+  <mat-radio-button value="2">Option 2</mat-radio-button>
+</mat-radio-group>
+ -->
+
+<h4>Basic mat-select</h4>
+<mat-form-field >
+  <mat-label>Favorite color</mat-label>
+  <mat-select [(ngModel)] = 'color'>
+    <mat-option *ngFor="let c of colors" [value]="c.id">
+      {{c.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
