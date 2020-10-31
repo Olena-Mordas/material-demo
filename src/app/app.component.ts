@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { timer } from 'rxjs';;
 
 @Component({
   selector: 'app-root',
@@ -6,14 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  progress=0;
-  timer;
+
+  isLoading = false;
 
   constructor(){
-    this.timer = setInterval(()=>{
-      this.progress++;
-      if(this.progress==100){clearInterval(this.timer)}
-    },20)
+    this.isLoading=true;
+    this.getCourses()
+      .subscribe(x=>this.isLoading=false);
   }
 
+  //fake service method 
+  getCourses(){
+    return timer(1000);
+  }
 }
