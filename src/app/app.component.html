@@ -1,14 +1,7 @@
-<mat-form-field appearance="fill">
-  <mat-label>Choose a date</mat-label>
-  <input 
-  (focus)="picker.open()"
-  [min]="startDate"
-  [max]="endDate"
-  matInput [matDatepicker]="picker">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker touchUi="true" startView="multi-year" [startAt]="startDate"></mat-datepicker>
-</mat-form-field>
-<mat-icon>home</mat-icon>
-
-<button color="accent" mat-raised-button >Button 1</button>
-<button mat-fab><mat-icon>check</mat-icon></button>
+<mat-chip-list>
+  <mat-chip *ngFor="let c of colors"
+  (click)="select(c)"
+  [selected] = "c.selected"> {{c.name}}
+  </mat-chip>
+  
+</mat-chip-list>
