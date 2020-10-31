@@ -6,16 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  colors = [
-    {id:1, name: 'Green'},
-    {id:2, name: 'White'},
-    {id:3, name: 'Indigo'}
-  ];
+  progress=0;
+  timer;
 
-  select(color){
-    this.colors.filter(c=>c!=color)
-    .forEach(c=>c['selected'] = false);
-
-    color.selected= !color.selected;
+  constructor(){
+    this.timer = setInterval(()=>{
+      this.progress++;
+      if(this.progress==100){clearInterval(this.timer)}
+    },20)
   }
+
 }
