@@ -1,12 +1,11 @@
-
-<mat-form-field>
-  <mat-label>Favorite food</mat-label>
+<mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
   <input 
-    ngModel
-    name='food'
-    matInput  placeholder="Ex. Pizza" value="Sushi" required>
-  <span matSuffix> is my fav food ^^ </span>
-  <mat-hint>hint </mat-hint>
-  <mat-error> Required !</mat-error>
+  (focus)="picker.open()"
+  [min]="startDate"
+  [max]="endDate"
+  matInput [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker touchUi="true" startView="multi-year" [startAt]="startDate"></mat-datepicker>
 </mat-form-field>
 
