@@ -1,9 +1,5 @@
-<mat-chip-list>
-  <mat-chip *ngFor="let c of colors"
-  (click)="select(c)"
-  [selected] = "c.selected"> {{c.name}}
-  </mat-chip>
-  
-</mat-chip-list>
+
 <mat-progress-spinner mode="indeterminate" *ngIf="isLoading"></mat-progress-spinner>
+
+<span matTooltip="tooltip" matTooltipPosition="below">Text</span>
 
